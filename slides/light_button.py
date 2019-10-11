@@ -50,7 +50,8 @@ def inloop(textchange = False,activity = False, offset = 0):
         requests.post(url, headers=headers, data='{"entity_id": "light.wohnzimmer"}')  
 
 
-
+def get_button_status():
+  pass
 
 
 
