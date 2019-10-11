@@ -39,7 +39,7 @@ def inloop(textchange = False,activity = False, offset = 0):
   if httpbutton.status == 'error':
     httpbutton.colouring.set_colour([0,0,1]) 
   if peripherals.touch_pressed:
-  peripherals.touch_pressed = False     
+    peripherals.touch_pressed = False     
   
   if peripherals.clicked(httpbutton.x,httpbutton.y):
     url = 'http://10.0.1.172:8123/api/services/light/toggle'
