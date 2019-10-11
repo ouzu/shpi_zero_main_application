@@ -79,7 +79,7 @@ pic_num = nFi - 1
 if config.startmqttclient:
   import core.mqttclient as mqttclient
   try: mqttclient.init()
-  except: pass
+  except: print('mqtt error')
 
 if config.starthttpserver:
   from http.server import BaseHTTPRequestHandler, HTTPServer              #ThreadingHTTPServer for python 3.7

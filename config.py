@@ -1,6 +1,6 @@
 installpath = '/home/pi/zero_main_application/'
 
-demo = 1  #shows demo slides
+demo = 0  #shows demo slides
 
 TMDELAY = 30  #delay for changing backgrounds
 INFRARED_TM = 5
