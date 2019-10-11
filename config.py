@@ -48,7 +48,8 @@ subslide = None
 
 #configurate your slides here
 
-slides = ['thermostat','weather','shutter','livegraph','status','amperemeter','rrdgraph','ical','settings']
+#slides = ['thermostat','weather','shutter','livegraph','status','amperemeter','rrdgraph','ical','settings']
+slides = ['light_button', 'thermostat','weather','livegraph','status','rrdgraph','settings']
 
 if demo:
   slides.append('demo_floorplan') 
