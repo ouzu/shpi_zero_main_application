@@ -30,24 +30,25 @@ httpbutton.status = 'unknown'  # on init status is unknown
 
 def inloop(textchange = False,activity = False, offset = 0):
       
-     if textchange:
-       text.regen()
-       text2.regen()       
-     
-     if httpbutton.status == 'unknown':
-        get_button_status()
-     if httpbutton.status == 'error':
-        httpbutton.colouring.set_colour([0,0,1]) 
-     if peripherals.touch_pressed:
-      peripherals.touch_pressed = False     
-      
-      if peripherals.clicked(httpbutton.x,httpbutton.y):
-        url = 'http://10.0.1.172:8123/api/services/light/toggle'
-        headers = {
-          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI4MGQ0NjA4YjlkMWY0MTkwOGIwNGUxMDZiMzY4MmQxMiIsImlhdCI6MTU3MDgxNzYxNiwiZXhwIjoxODg2MTc3NjE2fQ.rWoJeWwFkQgX726L_-wIYMt3bXXnay8HPMH1UTJec28',
-          'content-type': 'application/json',
-        }
-        requests.post(url, headers=headers, data='{"entity_id": "light.wohnzimmer"}')  
+  if textchange:
+    text.regen()
+    text2.regen()       
+  
+  if httpbutton.status == 'unknown':
+    get_button_status()
+  if httpbutton.status == 'error':
+    httpbutton.colouring.set_colour([0,0,1]) 
+  if peripherals.touch_pressed:
+  peripherals.touch_pressed = False     
+  
+  if peripherals.clicked(httpbutton.x,httpbutton.y):
+    url = 'http://10.0.1.172:8123/api/services/light/toggle'
+    headers = {
+      'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI4MGQ0NjA4YjlkMWY0MTkwOGIwNGUxMDZiMzY4MmQxMiIsImlhdCI6MTU3MDgxNzYxNiwiZXhwIjoxODg2MTc3NjE2fQ.rWoJeWwFkQgX726L_-wIYMt3bXXnay8HPMH1UTJec28',
+      'content-type': 'application/json',
+    }
+    requests.post(url, headers=headers, data='{"entity_id": "light.wohnzimmer"}')
+  return activity,offset
 
 
 def get_button_status():
