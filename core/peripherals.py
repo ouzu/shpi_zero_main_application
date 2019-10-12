@@ -373,17 +373,16 @@ def touch_debounce(channel):
 
 
 def clicksound():
-#   try:
-#   crc = crc8(0,BUZZER)
-#   crc = crc8(crc,VALS['CLICK'])
-#   bus.write([BUZZER,VALS['CLICK'],crc],ADDR_32U4)
-#   crca = bus.read(1,ADDR_32U4)
-#   time.sleep(0.001)
-#   if ([crc] != crca):
-#    print('crc8 error set clicksound')
-#  except:
-#   print('clicksound error')
-  pass
+  try:
+    rc = crc8(0,BUZZER)
+    crc = crc8(crc,VALS['CLICK'])
+    bus.write([BUZZER,VALS['CLICK'],crc],ADDR_32U4)
+    crca = bus.read(1,ADDR_32U4)
+    time.sleep(0.001)
+  if ([crc] != crca):
+    print('crc8 error set clicksound')
+  except:
+    print('clicksound error')
 
 def controlrelays(channel, value, retries=0):
   global i2cerror
